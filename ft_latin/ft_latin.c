@@ -6,7 +6,7 @@
 /*   By: jchung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/29 13:45:11 by jchung            #+#    #+#             */
-/*   Updated: 2018/01/29 14:06:16 by jchung           ###   ########.fr       */
+/*   Updated: 2018/01/29 14:08:53 by jchung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,41 +32,42 @@ void		ft_latin(char **str, int arrlen)
 	int		j;
 	int		k;
 
-	if (arrlen < 2)
-		return ;
-	i = 1;
-	if (i < arrlen)
+	if (arrlen > 1)
 	{
-		len = ft_strlen((const char *)str[i]);
-		tmpsize = len + 2;
-		tmp = (char *)malloc(sizeof(char) * tmpsize);
-		j = 1;
-		k = 0;
-		while (j < len)
-			tmp[k++] = str[i][j++];
-		if (str[i][0])
-			tmp[k++] = str[i][0];
-		tmp[k++] = '4';
-		tmp[k] = '2';
-		write(1, tmp, tmpsize);
-		i++;
-	}
-	while (i < arrlen)
-	{
-		len = ft_strlen((const char *)str[i]);
-		tmpsize = len + 2;
-		tmp = (char *)malloc(sizeof(char) * tmpsize);
-		j = 1;
-		k = 0;
-		while (j < len)
-			tmp[k++] = str[i][j++];
-		if (str[i][0])
-			tmp[k++] = str[i][0];
-		tmp[k++] = '4';
-		tmp[k] = '2';
-		write(1, " ", 1);
-		write(1, tmp, tmpsize);
-		i++;
+		i = 1;
+		if (i < arrlen)
+		{
+			len = ft_strlen((const char *)str[i]);
+			tmpsize = len + 2;
+			tmp = (char *)malloc(sizeof(char) * tmpsize);
+			j = 1;
+			k = 0;
+			while (j < len)
+				tmp[k++] = str[i][j++];
+			if (str[i][0])
+				tmp[k++] = str[i][0];
+			tmp[k++] = '4';
+			tmp[k] = '2';
+			write(1, tmp, tmpsize);
+			i++;
+		}
+		while (i < arrlen)
+		{
+			len = ft_strlen((const char *)str[i]);
+			tmpsize = len + 2;
+			tmp = (char *)malloc(sizeof(char) * tmpsize);
+			j = 1;
+			k = 0;
+			while (j < len)
+				tmp[k++] = str[i][j++];
+			if (str[i][0])
+				tmp[k++] = str[i][0];
+			tmp[k++] = '4';
+			tmp[k] = '2';
+			write(1, " ", 1);
+			write(1, tmp, tmpsize);
+			i++;
+		}
 	}
 	write(1, "\n", 1);
 }
